@@ -1,12 +1,13 @@
-var numeroUno = 0, numeroDos = 0, operacion = '',segundo = false,puntoUno = false,puntoDos = false,signo = true,resultado = 0,operado=false;
+var numeroUno = 0, numeroDos = 0, operacion = '',segundo = false,puntoUno = false,puntoDos = false,signo = false,resultado = 0,operado=false;
 function agregar(e) {
     var valor = e.srcElement.id;
+    setTimeout(push(valor,1),20);
     var display =   (segundo)?numeroDos:numeroUno;
     nuevoDisplay = (display ==  "0" || display ==  "-0" )?valor:display+valor;
     (segundo)?numeroDos = nuevoDisplay:numeroUno = nuevoDisplay;
     nuevoDisplay = (signo)?nuevoDisplay.substr(0,8):nuevoDisplay.substr(0,9);
     document.getElementById('display').innerHTML=nuevoDisplay;
-    
+    setTimeout(push(valor,0),20);
 }
 function operacionn(){
     resultado = 0;
@@ -142,27 +143,38 @@ function fn_resultado(){
 for(x=0;x<=9;x++){
     document.getElementById(x).onclick = agregar;
 }
-var teclas = document.getElementsByClassName("tecla");
+ teclas = document.getElementsByClassName("tecla");
 
 function push(id,opcion){
     if(opcion == 1){
-        alert('opcion');
-        document.getElementById(id).style.width= "15%";
+        // alert(id);
+        // document.getElementById(id).style.width= "5%";
         document.getElementById(id).style.height=" 30px";
+        // elemento.style.height=" 30px";
 
     }else{
-        alert('push');
-        document.getElementById(id).style.width= "29%";
-        document.getElementById(id).style.height=" 62.91px";
+        // alert('push');
+        // document.getElementById(id).style.width= "30%";
+        document.getElementById(id).style.height=" 60px";
+        // document.getElementById(id).style.height=" 62.91px";
     }
 
 }
-
-for (var i = 0; i < teclas.length; i++) {
-    console.log(teclas[i]);
-    document.getElementById(teclas[i].id).addEventListener('keypress', function(){push(teclas[i].id,1)}, false);
-    document.getElementById(teclas[i].id).addEventListener('keydown', function(){push(teclas[i].id,0)}, false);
+function ver(){
+    console.log('Hola');
 }
+// document.getElementById("ID").addEventListener("keypress", funcion);
+// for (var i = 0; i < teclas.length; i++) {
+
+//     console.log(teclas[i].id);
+//     id= teclas[i].id;
+    // document.getElementById('on').addEventListener("keypress", ver);
+    // var inputs = document.querySelectorAll('.tecla');
+    /* No es posible usar .forEach en todos los navegadores por ser un NodeList */
+    // for (var i = 0; i < inputs.length ; i++) {
+        // document.getElementById('7').addEventListener("keyup",ver,false);
+    // }
+
 document.getElementById("sign").addEventListener("click", fn_signo);
 document.getElementById("on").addEventListener("click", fn_cancelar);
 document.getElementById("punto").addEventListener("click", fn_punto);
