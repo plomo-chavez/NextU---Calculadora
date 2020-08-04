@@ -41,8 +41,8 @@ body{
   justify-content: space-between;
 }
 .teclado img{
-  width: 22%;
-  height: 62.91px;
+  width: 80px;
+  height: 65px;
 }
 @font-face {
   font-family: digital;
@@ -76,8 +76,11 @@ body{
 
 }
 .teclado .row .col1 img{
-  width: 29%;
-  height: 62.91px;
+  width: 80px;
+  height:65px;
+}
+.c{
+  margin-left: 9px;
 }
 
 .container-libreta{
@@ -118,7 +121,9 @@ body{
   font-weight: bold;
 }
 
-
+.b{
+  margin-left: 9px;
+}
 
 .titulo-container{
   width: 100%;
