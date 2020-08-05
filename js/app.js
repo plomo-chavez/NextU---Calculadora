@@ -4,7 +4,7 @@ var logica = (function(){
         display: function (valor){
             display = (valor.includes('-'))?valor.substr(0,9):valor.substr(0,8);
             document.getElementById('display').innerHTML= display;
-            console.log('numeroUno: '+numeroUno +' numeroUDos: '+ numeroDos +' resultado: '+ resultado +' operacion: '+ operacion +' signo: '+ ((signo)?'true':'False')   +' punto: '+ ((punto)?'true':'False') +' segundo: '+ ((segundo)?'true':'False') +' operado: '+ ((operado)?'true':'False'));
+            // console.log('numeroUno: '+numeroUno +' numeroUDos: '+ numeroDos +' resultado: '+ resultado +' operacion: '+ operacion +' signo: '+ ((signo)?'true':'False')   +' punto: '+ ((punto)?'true':'False') +' segundo: '+ ((segundo)?'true':'False') +' operado: '+ ((operado)?'true':'False'));
         },
         cancelar: function (){ 
             logica.display('0');   
